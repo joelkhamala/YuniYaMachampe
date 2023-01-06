@@ -1,46 +1,33 @@
 import { createWebHistory, createRouter } from 'vue-router'
 import store from '@/store'
 
+/* Layouts */
+const DefaultNav = () => import('@/components/layouts/Default.vue')
+/* Layouts */
+
 /* Guest Component */
 const Home = () => import('@/components/Home.vue')
 /* Guest Component */
 
-/* Layouts */
-const DashboardLayout = () => import('@/components/layouts/Default.vue')
-/* Layouts */
-
-/* Authenticated Component */
-const Dashboard = () => import('@/components/Dashboard.vue')
-/* Authenticated Component */
-
-
 const routes = [
     {
-        name: "home",
         path: "/",
-        component: Home,
+        component: DefaultNav,
         meta: {
             middleware: "guest",
-            title: `Home`
-        }
-    },
-    {
-        path: "/dashboard",
-        component: DashboardLayout,
-        meta: {
-            middleware: "auth"
+            title: `Default`
         },
         children: [
             {
-                name: "dashboard",
-                path: '/userdashboard',
-                component: Dashboard,
+                name: "home",
+                path: "/",
+                component: Home,
                 meta: {
-                    title: `Dashboard`
+                    title: `Home`
                 }
             },
         ]
-    }
+    },
 ]
 
 const router = createRouter({
