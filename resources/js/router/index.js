@@ -18,8 +18,12 @@ const StudentDashboard = () =>
 /* Dashboard Layout*/
 
 /* Guest Component */
-const Home = () => import("@/components/Home.vue");
-const About = () => import("@/components/About.vue");
+const Home = () => import("@/components/Pages/Home.vue");
+const About = () => import("@/components/Pages/About.vue");
+const Awards = () => import("@/components/Pages/Awards.vue");
+const Courses = () => import("@/components/Pages/AllCourses.vue");
+const Admission = () => import("@/components/Pages/Admission.vue");
+const Seminar = () => import("@/components/Pages/Seminar.vue");
 /* Guest Component */
 
 const routes = [
@@ -61,6 +65,38 @@ const routes = [
                 component: About,
                 meta: {
                     title: `About Us`,
+                },
+            },
+            {
+                name: "awards",
+                path: "/awards",
+                component: Awards,
+                meta: {
+                    title: `Awards`,
+                },
+            },
+            {
+                name: "courses",
+                path: "/courses",
+                component: Courses,
+                meta: {
+                    title: `All Courses`,
+                },
+            },
+            {
+                name: "admission",
+                path: "/admission",
+                component: Admission,
+                meta: {
+                    title: `Request Admission Letter`,
+                },
+            },
+            {
+                name: "seminar",
+                path: "/seminar",
+                component: Seminar,
+                meta: {
+                    title: `Seminars`,
                 },
             },
             {

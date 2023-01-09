@@ -102,18 +102,18 @@
                             <h4>All Pages</h4>
                             <ul>
                                 <li><router-link :to="{name:'home'}">Home</router-link></li>
-                                <li><a href="about.html">About us</a></li>
-                                <li><a href="admission.html">Admission</a></li>
+                                <li><router-link :to="{name: 'about'}">About us</router-link></li>
+                                <li><router-link :to="{name: 'admission'}">Request Admission</router-link></li>
                                 <li>
-                                    <a href="all-courses.html">All courses</a>
+                                    <router-link :to="{name: 'courses'}">All courses</router-link>
                                 </li>
                                 <li>
                                     <a href="course-details.html"
                                         >Course details</a
                                     >
                                 </li>
-                                <li><a href="awards.html">Awards</a></li>
-                                <li><a href="seminar.html">Seminar</a></li>
+                                <li><router-link :to="{name:'awards'}">Awards</router-link></li>
+                                <li><router-link :to="{name:'seminar'}">Seminar</router-link></li>
                                 <li><a href="events.html">Events</a></li>
                                 <li>
                                     <a href="event-details.html"
@@ -131,9 +131,6 @@
                             </ul>
                             <h4>User Profile</h4>
                             <ul>
-                                <li>
-                                    <a href="dashboard.html">User profile</a>
-                                </li>
                                 <li><a href="db-courses.html">Courses</a></li>
                                 <li><a href="db-exams.html">Exams</a></li>
                                 <li><a href="db-profile.html">Prfile</a></li>
@@ -226,19 +223,14 @@
                             <ul>
                                 <li><router-link :to="{name:'home'}">Home</router-link></li>
                                 <li class="about-menu">
-                                    <a href="about.html" class="mm-arr"
-                                        >About us</a
-                                    >
+                                    <router-link :to="{name: 'about'}" class="mm-arr">About us</router-link>
                                     <!-- MEGA MENU 1 -->
                                     <div class="mm-pos">
                                         <div class="about-mm m-menu">
                                             <div class="m-menu-inn">
                                                 <div class="mm1-com mm1-s1">
                                                     <div class="ed-course-in">
-                                                        <a
-                                                            class="course-overlay menu-about"
-                                                            href="admission.html"
-                                                        >
+                                                        <router-link :to="{name: 'admission'}" class="course-overlay menu-about">
                                                             <img
                                                                 src="images/h-about.jpg"
                                                                 alt=""
@@ -246,7 +238,7 @@
                                                             <span
                                                                 >Academics</span
                                                             >
-                                                        </a>
+                                                        </router-link>
                                                     </div>
                                                 </div>
                                                 <div class="mm1-com mm1-s2">
@@ -261,19 +253,12 @@
                                                         conversation every
                                                         single day.
                                                     </p>
-                                                    <a
-                                                        href="about.html"
-                                                        class="mm-r-m-btn"
-                                                        >Read more</a
-                                                    >
+                                                    <router-link :to="{name: 'about'}" class="mm-r-m-btn">Read More</router-link>
                                                 </div>
                                                 <div class="mm1-com mm1-s3">
                                                     <ul>
                                                         <li>
-                                                            <a
-                                                                href="all-courses.html"
-                                                                >All Courses</a
-                                                            >
+                                                            <router-link :to="{name: 'courses'}">All courses</router-link>
                                                         </li>
                                                         <li>
                                                             <a
@@ -283,33 +268,18 @@
                                                             >
                                                         </li>
                                                         <li>
-                                                            <a href="about.html"
-                                                                >About</a
-                                                            >
+                                                            <router-link :to="{name: 'about'}">About Us</router-link>
                                                         </li>
                                                         <li>
-                                                            <a
-                                                                href="admission.html"
-                                                                >Admission</a
-                                                            >
+                                                            <router-link :to="{name:'admission'}">Request Admission</router-link>
                                                         </li>
                                                         <li>
-                                                            <a
-                                                                href="awards.html"
-                                                                >Awards</a
-                                                            >
+                                                            <router-link :to="{name:'awards'}">Awards</router-link>
                                                         </li>
                                                     </ul>
                                                 </div>
                                                 <div class="mm1-com mm1-s4">
                                                     <ul>
-                                                        <li>
-                                                            <a
-                                                                href="dashboard.html"
-                                                                >Student
-                                                                profile</a
-                                                            >
-                                                        </li>
                                                         <li>
                                                             <a
                                                                 href="db-courses.html"
@@ -354,10 +324,7 @@
                                                     class="mm2-com mm1-com mm1-s1"
                                                 >
                                                     <div class="ed-course-in">
-                                                        <a
-                                                            class="course-overlay"
-                                                            href="about.html"
-                                                        >
+                                                        <router-link :to="{name: 'about'}" class="course-overlay">
                                                             <img
                                                                 src="images/h-about1.jpg"
                                                                 alt=""
@@ -365,7 +332,7 @@
                                                             <span
                                                                 >Academics</span
                                                             >
-                                                        </a>
+                                                        </router-link>
                                                     </div>
                                                     <p>
                                                         Donec lacus libero,
@@ -378,20 +345,13 @@
                                                         orci vitae accumsan
                                                         rhoncus.
                                                     </p>
-                                                    <a
-                                                        href="about.html"
-                                                        class="mm-r-m-btn"
-                                                        >Read more</a
-                                                    >
+                                                    <router-link :to="{name: 'about'}" class="mm-r-m-btn">Read More</router-link>
                                                 </div>
                                                 <div
                                                     class="mm2-com mm1-com mm1-s1"
                                                 >
                                                     <div class="ed-course-in">
-                                                        <a
-                                                            class="course-overlay"
-                                                            href="admission.html"
-                                                        >
+                                                        <router-link :to="{name:'admission'}" class="course-overlay">
                                                             <img
                                                                 src="images/h-adm1.jpg"
                                                                 alt=""
@@ -399,7 +359,7 @@
                                                             <span
                                                                 >Admission</span
                                                             >
-                                                        </a>
+                                                        </router-link>
                                                     </div>
                                                     <p>
                                                         Donec lacus libero,
@@ -412,19 +372,15 @@
                                                         orci vitae accumsan
                                                         rhoncus.
                                                     </p>
-                                                    <a
-                                                        href="admission.html"
-                                                        class="mm-r-m-btn"
-                                                        >Read more</a
-                                                    >
+                                                    <router-link :to="{name:'admission'}">Request Admission</router-link>
                                                 </div>
                                                 <div
                                                     class="mm2-com mm1-com mm1-s1"
                                                 >
                                                     <div class="ed-course-in">
-                                                        <a
+                                                        <router-link
                                                             class="course-overlay"
-                                                            href="awards.html"
+                                                            :to="{name:'awards'}"
                                                         >
                                                             <img
                                                                 src="images/h-cam1.jpg"
@@ -434,7 +390,7 @@
                                                                 >History &
                                                                 awards</span
                                                             >
-                                                        </a>
+                                                        </router-link>
                                                     </div>
                                                     <p>
                                                         Donec lacus libero,
@@ -447,19 +403,15 @@
                                                         orci vitae accumsan
                                                         rhoncus.
                                                     </p>
-                                                    <a
-                                                        href="awards.html"
-                                                        class="mm-r-m-btn"
-                                                        >Read more</a
-                                                    >
+                                                    <router-link :to="{name:'awards'}" class="mm-r-m-btn">Awards</router-link>
                                                 </div>
                                                 <div
                                                     class="mm2-com mm1-com mm1-s4"
                                                 >
                                                     <div class="ed-course-in">
-                                                        <a
+                                                        <router-link
                                                             class="course-overlay"
-                                                            href="seminar.html"
+                                                            :to="{name: 'seminar'}"
                                                         >
                                                             <img
                                                                 src="images/h-res1.jpg"
@@ -467,9 +419,9 @@
                                                             />
                                                             <span
                                                                 >Seminar
-                                                                2018</span
+                                                                {{new Date().getFullYear()}}</span
                                                             >
-                                                        </a>
+                                                        </router-link>
                                                     </div>
                                                     <p>
                                                         Donec lacus libero,
@@ -482,18 +434,14 @@
                                                         orci vitae accumsan
                                                         rhoncus.
                                                     </p>
-                                                    <a
-                                                        href="seminar.html"
-                                                        class="mm-r-m-btn"
-                                                        >Read more</a
-                                                    >
+                                                    <router-link :to="{name:'seminar'}">Read More</router-link>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </li>
                                 <li>
-                                    <a href="all-courses.html">All Courses</a>
+                                    <router-link :to="{name: 'courses'}">All courses</router-link>
                                 </li>
                                 <!--<li><a class='dropdown-button ed-sub-menu' href='#' data-activates='dropdown1'>Courses</a></li>-->
                                 <li class="cour-menu">
@@ -511,10 +459,7 @@
                                                             <router-link :to="{name:'home'}">Home</router-link>
                                                         </li>
                                                         <li>
-                                                            <a
-                                                                href="all-courses.html"
-                                                                >All Courses</a
-                                                            >
+                                                            <router-link :to="{name: 'courses'}">All courses</router-link>
                                                         </li>
                                                         <li>
                                                             <a
@@ -524,21 +469,13 @@
                                                             >
                                                         </li>
                                                         <li>
-                                                            <a href="about.html"
-                                                                >About us</a
-                                                            >
+                                                            <router-link :to="{name:'about'}">About Us</router-link>
                                                         </li>
                                                         <li>
-                                                            <a
-                                                                href="admission.html"
-                                                                >admission</a
-                                                            >
+                                                            <router-link :to="{name:'admission'}">Request Admission</router-link>
                                                         </li>
                                                         <li>
-                                                            <a
-                                                                href="awards.html"
-                                                                >awards</a
-                                                            >
+                                                            <router-link :to="{name:'awards'}">Awards</router-link>
                                                         </li>
                                                         <li>
                                                             <a href="blog.html"
@@ -610,10 +547,7 @@
                                                             >
                                                         </li>
                                                         <li>
-                                                            <a
-                                                                href="seminar.html"
-                                                                >seminar</a
-                                                            >
+                                                            <router-link :to="{name:'seminar'}">Seminar</router-link>
                                                         </li>
                                                         <li>
                                                             <a
@@ -629,13 +563,6 @@
                                                         User Dashboard
                                                     </h4>
                                                     <ul>
-                                                        <li>
-                                                            <a
-                                                                href="dashboard.html"
-                                                                >Student
-                                                                profile</a
-                                                            >
-                                                        </li>
                                                         <li>
                                                             <a
                                                                 href="db-courses.html"
@@ -736,7 +663,7 @@
                                                         </li>
                                                         <li>
                                                             <a
-                                                                href="admin-slider.html"
+                                                                href="admin-slidcourse-details.htmler.html"
                                                                 >Slider
                                                                 setting</a
                                                             >
@@ -958,7 +885,6 @@
                                     </div>
                                 </li>
                                 <li><a href="events.html">Events</a></li>
-                                <li><a href="dashboard.html">Student</a></li>
                                 <li>
                                     <a href="contact-us.html">Contact us</a>
                                 </li>
