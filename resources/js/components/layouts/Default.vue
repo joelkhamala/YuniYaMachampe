@@ -156,11 +156,11 @@
                             <ul>
                                 <li>
                                     <a href="#"
-                                        >Contact: Lake Road, Suite 180
-                                        Farmington Hills, U.S.A.</a
+                                        >Contact: Mogotio Road, Jerun Building
+                                        Westlands, Kenya.</a
                                     >
                                 </li>
-                                <li><a href="#">Phone: +101-1231-1231</a></li>
+                                <li><a href="#">Phone: +254 729 520 665</a></li>
                             </ul>
                         </div>
                         <div class="ed-com-t1-right">
@@ -1090,11 +1090,10 @@
                 <div class="col-md-4 foot-tc-mar-t-o">
                     <h4>Get In Touch</h4>
                     <p>
-                        Address: 28800 Orchard Lake Road, Suite 180 Farmington
-                        Hills, U.S.A.
+                        Address: 767 Mogotio Road, Jerun Building Westlands, Kenya.
                     </p>
-                    <p>Phone: <a href="#!">+101-1231-4321</a></p>
-                    <p>Email: <a href="#!">info@edu.com</a></p>
+                    <p>Phone: <a href="#!">+254 729 520 665</a></p>
+                    <p>Email: <a href="#!">info@edu.yymc.com</a></p>
                 </div>
                 <div class="col-md-4">
                     <h4>DOWNLOAD OUR FREE MOBILE APPS</h4>

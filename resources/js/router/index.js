@@ -26,6 +26,15 @@ const Admission = () => import("@/components/Pages/Admission.vue");
 const Seminar = () => import("@/components/Pages/Seminar.vue");
 const Events = () => import("@/components/Pages/Events.vue");
 const Contact = () => import("@/components/Pages/Contact.vue");
+
+/* Student Dashboard Pages */
+const Profile = () => import("@/components/Dashboard/Profile.vue");
+const Dashboard = () => import("@/components/Dashboard/Dashboard.vue");
+const MyCourses = () => import("@/components/Dashboard/MyCourses.vue");
+const Exams = () => import("@/components/Dashboard/Exams.vue");
+const Timeline = () => import("@/components/Dashboard/Timeline.vue");
+/* Student Dashboard Pages */
+
 /* Guest Component */
 
 const routes = [
@@ -125,12 +134,53 @@ const routes = [
                 },
                 children: [
                     {
-                        name: "studentdashboard",
                         path: "/studentdashboard",
                         component: StudentDashboard,
                         meta: {
                             title: `Student Dashboard`,
                         },
+                        children: [
+                            {
+                                name: "studentdashboard",
+                                path: "/studentdashboard",
+                                component: Dashboard,
+                                meta: {
+                                    title: `Student Dashboard | Dashboard`,
+                                },
+                            },
+                            {
+                                name: "profile",
+                                path: "/profile",
+                                component: Profile,
+                                meta: {
+                                    title: `Student Dashboard | Profile`,
+                                },
+                            },
+                            {
+                                name: "my-courses",
+                                path: "/my-courses",
+                                component: MyCourses,
+                                meta: {
+                                    title: `Student Dashboard | My Courses`,
+                                },
+                            },
+                            {
+                                name: "exams",
+                                path: "/exams",
+                                component: Exams,
+                                meta: {
+                                    title: `Student Dashboard | Exams`,
+                                },
+                            },
+                            {
+                                name: "timeline",
+                                path: "/timeline",
+                                component: Timeline,
+                                meta: {
+                                    title: `Student Dashboard | Timeline`,
+                                },
+                            },
+                        ],
                     },
                 ],
             },
