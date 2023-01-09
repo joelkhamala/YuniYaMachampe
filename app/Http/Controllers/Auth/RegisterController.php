@@ -84,7 +84,7 @@ class RegisterController extends Controller
             $userdata = $user->where('firstname', $data['firstname']);
             $user_id = $userdata->value('id');
             $user_role = $userdata->value('role');
-            if($user_role == 'customer')
+            if($user_role == 'student')
             {
                 $customer = Customer::create([
                     'user_id' => $user_id

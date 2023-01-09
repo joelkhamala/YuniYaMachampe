@@ -5,9 +5,7 @@
             <div class="ed-mob-menu-con">
                 <div class="ed-mm-left">
                     <div class="wed-logo">
-                        <a href="index-2.html"
-                            ><img src="images/logo.png" alt="" />
-                        </a>
+                        <router-link :to="{name:'home'}"><img src="images/logo.png" alt="" /></router-link>
                     </div>
                 </div>
                 <div class="ed-mm-right">
@@ -103,7 +101,7 @@
                             </ul>
                             <h4>All Pages</h4>
                             <ul>
-                                <li><a href="index-2.html">Home</a></li>
+                                <li><router-link :to="{name:'home'}">Home</router-link></li>
                                 <li><a href="about.html">About us</a></li>
                                 <li><a href="admission.html">Admission</a></li>
                                 <li>
@@ -217,13 +215,11 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="wed-logo">
-                            <a href="index-2.html"
-                                ><img src="images/logo.png" alt="" />
-                            </a>
+                            <router-link :to="{name:'home'}"><img src="images/logo.png" alt="" /></router-link>
                         </div>
                         <div class="main-menu">
                             <ul>
-                                <li><a href="index-2.html">Home</a></li>
+                                <li><router-link :to="{name:'home'}">Home</router-link></li>
                                 <li class="about-menu">
                                     <a href="about.html" class="mm-arr"
                                         >About us</a
@@ -507,16 +503,7 @@
                                                     <h4>Frontend pages:1</h4>
                                                     <ul>
                                                         <li>
-                                                            <a
-                                                                href="index-2.html"
-                                                                >Home</a
-                                                            >
-                                                        </li>
-                                                        <li>
-                                                            <a
-                                                                href="index-1.html"
-                                                                >Home - 1</a
-                                                            >
+                                                            <router-link :to="{name:'home'}">Home</router-link>
                                                         </li>
                                                         <li>
                                                             <a
@@ -1566,18 +1553,6 @@ import { mapActions, mapGetters } from "vuex";
 
 export default {
     name: "default-layout",
-    data() {
-        return {
-            user: this.$store.state.auth.user,
-            isActive: false,
-        };
-    },
-    computed: {
-        ...mapGetters(["productRestock"]),
-    },
-    created() {
-        this.$store.dispatch("restockProducts");
-    },
     mounted() {
         $(document).ready(function () {
             "use strict";
@@ -1785,26 +1760,6 @@ export default {
                 alignment: "left", // Displays dropdown with edge aligned to the left of button
             });
         });
-    },
-    methods: {
-        ...mapActions({
-            signOut: "auth/logout",
-        }),
-        async logout() {
-            await axios.post("/logout").then(({ data }) => {
-                this.signOut();
-                this.$router.push({ name: "login" });
-            });
-        },
-        toggleClass(event) {
-            this.isActive = !this.isActive;
-            var checkboxes = document.getElementsByClassName("noclass");
-            for (var i = 0; i < checkboxes.length; i++) {
-                checkboxes[i].classList.add("active");
-            }
-
-            event.target.classList.remove("active");
-        },
     },
 };
 </script>

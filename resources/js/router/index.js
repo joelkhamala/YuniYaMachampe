@@ -11,6 +11,12 @@ const Login = () => import('@/components/authLayouts/Login.vue')
 const Register = () => import('@/components/authLayouts/Register.vue')
 /* Authentication Layouts */
 
+/* Dashboard Layout*/
+const StudentDashboardLayout = () => import('@/components/layouts/StudentDashboardLayout.vue')
+const StudentDashboard = () => import('@/components/Dashboard/StudentDashboard.vue')
+/* Dashboard Layout*/
+
+
 /* Guest Component */
 const Home = () => import('@/components/Home.vue')
 /* Guest Component */
@@ -47,6 +53,23 @@ const routes = [
                 meta: {
                     title: `register`
                 }
+            },
+            {
+                path: "/studentdashboardlayout",
+                component: StudentDashboardLayout,
+                meta: {
+                    middleware: "auth"
+                },
+                children: [
+                    {
+                        name: "studentdashboard",
+                        path: '/studentdashboard',
+                        component: StudentDashboard,
+                        meta: {
+                            title: `Student Dashboard`
+                        }
+                    },
+                ]
             }
         ]
     },
@@ -61,7 +84,7 @@ router.beforeEach((to, from, next) => {
     document.title = to.meta.title
     if (to.meta.middleware == "guest") {
         if (store.state.auth.authenticated) {
-            next({ name: "dashboard" })
+            next({ name: "studentdashboard" })
         }
         next()
     } else {

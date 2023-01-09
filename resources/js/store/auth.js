@@ -29,7 +29,7 @@ export default {
                 const { data } = await axios.get('/api/user')
                 commit('SET_USER', data)
                 commit('SET_AUTHENTICATED', true)
-                    router.push({ name: 'dashboard' })
+                    router.push({ name: 'studentdashboard' })
             } catch ({ response: { data: data_1 } }) {
                 commit('SET_USER', {})
                 commit('SET_AUTHENTICATED', false)
