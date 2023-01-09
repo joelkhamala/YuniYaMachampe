@@ -9,25 +9,22 @@
                 <div class="pro-user-bio">
                     <ul>
                         <li>
-                            <h4>Emily Jessica</h4>
+                            <h4>{{user.firstname }} {{user.middlename }} {{user.lastname }}</h4>
                         </li>
-                        <li>Student Id: ST17241</li>
+                        <li>Student Id: {{ user.id }}</li>
                         <li>
                             <a href="#!"
-                                ><i class="fa fa-facebook"></i> Facebook: my
-                                sample</a
+                                ><i class="fa fa-facebook"></i> Facebook: facebook.com/{{user.lastname }}</a
                             >
                         </li>
                         <li>
                             <a href="#!"
-                                ><i class="fa fa-google-plus"></i> Google: my
-                                sample</a
+                                ><i class="fa fa-google-plus"></i> Google: {{user.email }}</a
                             >
                         </li>
                         <li>
                             <a href="#!"
-                                ><i class="fa fa-twitter"></i> Twitter: my
-                                sample</a
+                                ><i class="fa fa-twitter"></i> Twitter: @{{user.lastname }}</a
                             >
                         </li>
                     </ul>
@@ -628,26 +625,6 @@ export default {
             user: this.$store.state.auth.user,
             isActive: false,
         };
-    },
-    methods: {
-        ...mapActions({
-            signOut: "auth/logout",
-        }),
-        async logout() {
-            await axios.post("/logout").then(({ data }) => {
-                this.signOut();
-                this.$router.push({ name: "login" });
-            });
-        },
-        toggleClass(event) {
-            this.isActive = !this.isActive;
-            var checkboxes = document.getElementsByClassName("noclass");
-            for (var i = 0; i < checkboxes.length; i++) {
-                checkboxes[i].classList.add("active");
-            }
-
-            event.target.classList.remove("active");
-        },
     },
 };
 </script>
