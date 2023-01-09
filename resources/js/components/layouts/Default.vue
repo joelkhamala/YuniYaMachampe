@@ -167,12 +167,17 @@
                             </ul>
                         </div>
                         <div class="ed-com-t1-right">
-                            <ul>
+                            <ul v-if="myauth != true">
                                 <li>
                                     <router-link :to="{name:'login'}">Sign In</router-link>
                                 </li>
                                 <li>
                                     <router-link :to="{name:'register'}">Sign Up</router-link>
+                                </li>
+                            </ul>
+                            <ul v-else>
+                                <li>
+                                    <router-link :to="{name:'studentdashboard'}">Welcome, {{user.firstname}} {{user.lastname}}</router-link>
                                 </li>
                             </ul>
                         </div>
@@ -1553,6 +1558,12 @@ import { mapActions, mapGetters } from "vuex";
 
 export default {
     name: "default-layout",
+    data() {
+    return{
+        myauth: this.$store.state.auth.authenticated,
+        user: this.$store.state.auth.user,
+    }
+    },
     mounted() {
         $(document).ready(function () {
             "use strict";
