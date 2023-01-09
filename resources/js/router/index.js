@@ -5,6 +5,12 @@ import store from '@/store'
 const DefaultNav = () => import('@/components/layouts/Default.vue')
 /* Layouts */
 
+
+/* Authentication Layouts */
+const Login = () => import('@/components/authLayouts/Login.vue')
+const Register = () => import('@/components/authLayouts/Register.vue')
+/* Authentication Layouts */
+
 /* Guest Component */
 const Home = () => import('@/components/Home.vue')
 /* Guest Component */
@@ -26,6 +32,22 @@ const routes = [
                     title: `Home`
                 }
             },
+            {
+                name: "login",
+                path: "/login",
+                component: Login,
+                meta: {
+                    title: `login`
+                }
+            },
+            {
+                name: "register",
+                path: "/register",
+                component: Register,
+                meta: {
+                    title: `register`
+                }
+            }
         ]
     },
 ]

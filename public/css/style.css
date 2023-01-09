@@ -1534,8 +1534,9 @@
      border: 0px;
      color: #fff;
      font-weight: 600;
+     font-size: small;
      text-transform: uppercase;
-     padding: 13px;
+     padding: 12.5px;
      border: 1px solid #e25f30;
      border-top-right-radius: 2px;
      border-bottom-right-radius: 2px;
