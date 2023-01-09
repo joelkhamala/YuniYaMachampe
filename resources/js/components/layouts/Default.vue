@@ -114,7 +114,7 @@
                                 </li>
                                 <li><router-link :to="{name:'awards'}">Awards</router-link></li>
                                 <li><router-link :to="{name:'seminar'}">Seminar</router-link></li>
-                                <li><a href="events.html">Events</a></li>
+                                <li><router-link :to="{name:'events'}">Events</router-link></li>
                                 <li>
                                     <a href="event-details.html"
                                         >Event details</a
@@ -126,7 +126,7 @@
                                     >
                                 </li>
                                 <li>
-                                    <a href="contact-us.html">Contact us</a>
+                                    <router-link :to="{name:'contact-us'}">Contact Us</router-link>
                                 </li>
                             </ul>
                             <h4>User Profile</h4>
@@ -489,10 +489,7 @@
                                                             >
                                                         </li>
                                                         <li>
-                                                            <a
-                                                                href="contact-us.html"
-                                                                >contact us</a
-                                                            >
+                                                            <router-link :to="{name:'contact-us'}">Contact Us</router-link>
                                                         </li>
                                                         <li>
                                                             <a
@@ -501,10 +498,7 @@
                                                             >
                                                         </li>
                                                         <li>
-                                                            <a
-                                                                href="events.html"
-                                                                >events</a
-                                                            >
+                                                            <router-link :to="{name:'events'}">Events</router-link>
                                                         </li>
                                                         <li>
                                                             <a
@@ -884,9 +878,9 @@
                                         </div>
                                     </div>
                                 </li>
-                                <li><a href="events.html">Events</a></li>
+                                <li><router-link :to="{name:'events'}">Events</router-link></li>
                                 <li>
-                                    <a href="contact-us.html">Contact us</a>
+                                    <router-link :to="{name:'contact-us'}">Contact Us</router-link>
                                 </li>
                             </ul>
                         </div>

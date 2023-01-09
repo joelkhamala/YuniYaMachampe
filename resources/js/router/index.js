@@ -24,6 +24,8 @@ const Awards = () => import("@/components/Pages/Awards.vue");
 const Courses = () => import("@/components/Pages/AllCourses.vue");
 const Admission = () => import("@/components/Pages/Admission.vue");
 const Seminar = () => import("@/components/Pages/Seminar.vue");
+const Events = () => import("@/components/Pages/Events.vue");
+const Contact = () => import("@/components/Pages/Contact.vue");
 /* Guest Component */
 
 const routes = [
@@ -97,6 +99,22 @@ const routes = [
                 component: Seminar,
                 meta: {
                     title: `Seminars`,
+                },
+            },
+            {
+                name: "events",
+                path: "/events",
+                component: Events,
+                meta: {
+                    title: `Events`,
+                },
+            },
+            {
+                name: "contact-us",
+                path: "/contact-us",
+                component: Contact,
+                meta: {
+                    title: `Contact Us`,
                 },
             },
             {
