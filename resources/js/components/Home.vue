@@ -7,7 +7,7 @@
                 <div class="item slider1 active">
                     <img src="images/slider/1.jpg" alt="">
                     <div class="carousel-caption slider-con">
-                        <h2>Welcome to <span>University</span></h2>
+                        <h2>Welcome to <span>Yuni ya Machampe</span></h2>
                         <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form</p>
                         <a href="#" class="bann-btn-1">All Courses</a><a href="#" class="bann-btn-2">Read More</a>
                     </div>
@@ -15,7 +15,7 @@
                 <div class="item">
                     <img src="images/slider/2.jpg" alt="">
                     <div class="carousel-caption slider-con">
-                        <h2>Admission open <span>2018</span></h2>
+                        <h2>Admission open <span>{{new Date().getFullYear()}}</span></h2>
                         <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form</p>
                         <a href="#" class="bann-btn-1">Admission</a><a href="#" class="bann-btn-2">Read More</a>
                     </div>

@@ -19,6 +19,7 @@ const StudentDashboard = () =>
 
 /* Guest Component */
 const Home = () => import("@/components/Home.vue");
+const About = () => import("@/components/About.vue");
 /* Guest Component */
 
 const routes = [
@@ -43,7 +44,7 @@ const routes = [
                 path: "/login",
                 component: Login,
                 meta: {
-                    title: `login`,
+                    title: `Login`,
                 },
             },
             {
@@ -51,7 +52,15 @@ const routes = [
                 path: "/register",
                 component: Register,
                 meta: {
-                    title: `register`,
+                    title: `Register`,
+                },
+            },
+            {
+                name: "about",
+                path: "/about",
+                component: About,
+                meta: {
+                    title: `About Us`,
                 },
             },
             {

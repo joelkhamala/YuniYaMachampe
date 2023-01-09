@@ -5,7 +5,7 @@
             <div class="ed-mob-menu-con">
                 <div class="ed-mm-left">
                     <div class="wed-logo">
-                        <router-link :to="{name:'home'}"><img src="images/logo.png" alt="" /></router-link>
+                        <router-link :to="{name:'home'}"><img src="images/logo3_trans.png" alt="" /></router-link>
                     </div>
                 </div>
                 <div class="ed-mm-right">
@@ -220,7 +220,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="wed-logo">
-                            <router-link :to="{name:'home'}"><img src="images/logo.png" alt="" /></router-link>
+                            <router-link :to="{name:'home'}"><img src="images/logo3_trans.png" alt="" /></router-link>
                         </div>
                         <div class="main-menu">
                             <ul>
