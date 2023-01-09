@@ -3,8 +3,12 @@
     <div class="stu-db">
         <div class="container pg-inn">
             <div class="col-md-3">
-                <div class="pro-user">
-                    <img src="images/user.jpg" alt="user" />
+                <div class="pro-user" v-if="user.gender != 'none'">
+                    <img src="images/male.png" alt="user" v-if="user.gender == 'male'"/>
+                    <img src="images/female.png" alt="user" v-else/>
+                </div>
+                <div class="pro-user" v-else>
+                    <img src="images/other.png" alt="user"/>
                 </div>
                 <div class="pro-user-bio">
                     <ul>

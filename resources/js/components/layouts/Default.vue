@@ -1479,9 +1479,11 @@ export default {
     name: "default-layout",
     data() {
     return{
-        myauth: this.$store.state.auth.authenticated,
         user: this.$store.state.auth.user,
     }
+    },
+    created(){
+        this.handleCreated()
     },
     mounted() {
         $(document).ready(function () {
@@ -1690,6 +1692,20 @@ export default {
                 alignment: "left", // Displays dropdown with edge aligned to the left of button
             });
         });
+    },
+
+    methods: {
+        async handleCreated() {
+        try {
+            await api.get();
+
+            this.myauth = this.$store.state.auth.authenticated;
+        } catch (e) {
+            console.error(e);
+
+            this.myauth = this.$store.state.auth.authenticated;
+        }
+        },
     },
 };
 </script>

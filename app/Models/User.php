@@ -30,6 +30,7 @@ class User extends Authenticatable
         'status',
         'random_id',
         'page_id',
+        'gender',
         'password'
     ];
 

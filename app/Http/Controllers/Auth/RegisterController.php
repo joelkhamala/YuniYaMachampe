@@ -63,6 +63,7 @@ class RegisterController extends Controller
             'status' => ['required', 'string', 'max:255'],
             'random_id' => ['string', 'min:5', 'unique:users'],
             'page_id' => ['string', 'min:11', 'unique:users'],
+            'gender' => ['required','string', 'min:4'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
     }
@@ -90,6 +91,7 @@ class RegisterController extends Controller
             'status' => $data['status'],
             'random_id' => $randomNumber,
             'page_id' => $randomPageID,
+            'gender' => $data['gender'],
             'password' => Hash::make($data['password']),
         ]);
 

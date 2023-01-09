@@ -144,7 +144,15 @@
                         class="form-control"
                     />
                 </div>
-                <div class="form-group col-lg-12">
+                <div class="form-group col-lg-6">
+                    <label for="gender" class="font-weight-bold text-md">Gender</label>
+                    <select id="gender" name="gender" v-model="user.gender" class="form-control text-md">
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="none">Rather Not Say</option>
+                    </select>
+                </div>
+                <div class="form-group col-lg-6">
                     <label for="address" class="font-weight-bold">Address</label>
                     <input
                         type="text"
@@ -200,7 +208,7 @@
                         :disabled="processing"
                         class="btn-block btn-lg waves-effect waves-light log-in-btn pt-3 pb-3"
                     >
-                        {{ processing ? "Loading...Please wait" : "Register" }}
+                        {{ processing ? "Loading, Please wait..." : "Register" }}
                     </button>
                 </div>
                 <div class="col-6 text-center d-flex align-items-center mt-2">
@@ -234,6 +242,7 @@ export default {
                 date_of_birth: "",
                 address: "",
                 status: "0",
+                gender: "",
                 password: "",
                 password_confirmation: "",
             },
