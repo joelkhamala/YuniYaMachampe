@@ -155,16 +155,16 @@
                         class="form-control"
                     />
                 </div>
-                <div class="col-12 mb-2">
+                <div class="col-6 mb-2">
                     <button
                         type="submit"
                         :disabled="processing"
-                        class="btn btn-primary btn-block"
+                        class="btn-block btn-lg waves-effect waves-light log-in-btn pt-3 pb-3"
                     >
                         {{ processing ? "Please wait" : "Register" }}
                     </button>
                 </div>
-                <div class="col-12 text-center">
+                <div class="col-6 text-center d-flex align-items-center mt-2">
                     <label
                         >Already have an account?
                         <router-link :to="{ name: 'login' }"

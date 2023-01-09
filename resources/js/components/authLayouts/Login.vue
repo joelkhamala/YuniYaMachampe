@@ -63,16 +63,17 @@
                         class="form-control"
                     />
                 </div>
-                <div class="col-12 mb-2">
+                <div class="col-6 mt-2">
                     <button
                         type="submit"
                         :disabled="processing"
-                        class="btn btn-primary btn-block"
+                        @click="login"
+                        class="btn-block btn-lg waves-effect waves-light log-in-btn pt-3 pb-3"
                     >
                         {{ processing ? "Please wait" : "Login" }}
                     </button>
                 </div>
-                <div class="col-12 text-center">
+                <div class="col-6 text-center d-flex align-items-center mt-2">
                     <label
                         >Don't have an account?
                         <router-link :to="{ name: 'register' }"
@@ -126,5 +127,9 @@ export default {
 <style>
 a {
     text-decoration: none;
+}
+.log-in-btn
+{
+border: none;
 }
 </style>
