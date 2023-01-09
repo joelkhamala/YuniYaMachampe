@@ -29,22 +29,22 @@
                                         <tr>
                                             <td>Phone</td>
                                             <td>:</td>
-                                            <td>+01 4561 3214</td>
+                                            <td>{{user.phone}}</td>
                                         </tr>
                                         <tr>
                                             <td>Date of birth</td>
                                             <td>:</td>
-                                            <td>03 Jun 1990</td>
+                                            <td>{{user.date_of_birth}}</td>
                                         </tr>
                                         <tr>
                                             <td>Address</td>
                                             <td>:</td>
-                                            <td>8800 Orchard Lake Road, Suite 180 Farmington Hills, U.S.A.</td>
+                                            <td>{{user.address}}</td>
                                         </tr>
                                         <tr>
                                             <td>Status</td>
                                             <td>:</td>
-                                            <td><span class="db-done">Active</span> </td>
+                                            <td><span class="db-done" v-if="user.status == 0">Inactive</span><span class="db-done" v-else>Active</span> </td>
                                         </tr>
                                     </tbody>
                                 </table>

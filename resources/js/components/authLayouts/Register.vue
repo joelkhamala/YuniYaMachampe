@@ -123,7 +123,7 @@
                     />
                 </div>
                 <div class="form-group col-lg-6">
-                    <label for="phone" class="font-weight-bold">phone</label>
+                    <label for="phone" class="font-weight-bold">Phone</label>
                     <input
                         type="text"
                         name="phone"
@@ -134,7 +134,7 @@
                     />
                 </div>
                 <div class="form-group col-lg-6">
-                    <label for="date_of_birth" class="font-weight-bold">date_of_birth</label>
+                    <label for="date_of_birth" class="font-weight-bold">Date Of Birth</label>
                     <input
                         type="text"
                         name="date_of_birth"
@@ -144,15 +144,21 @@
                         class="form-control"
                     />
                 </div>
-                <div class="form-group col-lg-6">
-                    <label for="address" class="font-weight-bold">address</label>
+                <div class="form-group col-lg-12">
+                    <label for="address" class="font-weight-bold">Address</label>
                     <input
                         type="text"
                         name="address"
                         v-model="user.address"
                         id="address"
-                        placeholder="Enter Address"
+                        placeholder="Enter Location Address"
                         class="form-control"
+                    />
+
+                    <input
+                        type="hidden"
+                        name="status"
+                        v-model="user.status"
                     />
                 </div>
 
@@ -227,6 +233,7 @@ export default {
                 phone: "",
                 date_of_birth: "",
                 address: "",
+                status: "0",
                 password: "",
                 password_confirmation: "",
             },
