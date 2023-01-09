@@ -19,7 +19,7 @@
                                         <tr>
                                             <td>Student Id</td>
                                             <td>:</td>
-                                            <td>ST17241</td>
+                                            <td>{{ user.random_id }}</td>
                                         </tr>
                                         <tr>
                                             <td>Email</td>

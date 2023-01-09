@@ -11,7 +11,7 @@
                         <li>
                             <h4>{{user.firstname }} {{user.middlename }} {{user.lastname }}</h4>
                         </li>
-                        <li>Student Id: {{ user.id }}</li>
+                        <li>Student Id: {{ user.random_id }}</li>
                         <li>
                             <a href="#!"
                                 ><i class="fa fa-facebook"></i> Facebook: facebook.com/{{user.lastname }}</a

@@ -25,6 +25,8 @@ return new class extends Migration
             $table->string('date_of_birth');
             $table->string('address');
             $table->string('status')->default('0');
+            $table->string('random_id')->default('0');
+            $table->string('page_id')->default('0');
             $table->string('role');
             $table->string('password');
             $table->rememberToken();

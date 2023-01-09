@@ -61,6 +61,8 @@ class RegisterController extends Controller
             'date_of_birth' => ['required', 'string', 'max:255'],
             'address' => ['required', 'string', 'max:255'],
             'status' => ['required', 'string', 'max:255'],
+            'random_id' => ['string', 'min:5', 'unique:users'],
+            'page_id' => ['string', 'min:11', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
     }
@@ -73,6 +75,8 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        $randomNumber = substr(str_shuffle("0123456789"), 0, 5);
+        $randomPageID = substr(str_shuffle("0123456789abcdefghijklmnopqrstvwxyzABCDEFGHIJKLMNOPQRSTVWXYZ"), 0, 15);
         $user = User::create([
             'firstname' => $data['firstname'],
             'middlename' => $data['middlename'],
@@ -84,6 +88,8 @@ class RegisterController extends Controller
             'date_of_birth' => $data['date_of_birth'],
             'address' => $data['address'],
             'status' => $data['status'],
+            'random_id' => $randomNumber,
+            'page_id' => $randomPageID,
             'password' => Hash::make($data['password']),
         ]);
 
