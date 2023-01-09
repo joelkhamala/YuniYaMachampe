@@ -70,7 +70,7 @@
                         @click="login"
                         class="btn-block btn-lg waves-effect waves-light log-in-btn pt-3 pb-3"
                     >
-                        {{ processing ? "Please wait" : "Login" }}
+                        {{ processing ? "Authenticating..." : "Login" }}
                     </button>
                 </div>
                 <div class="col-6 text-center d-flex align-items-center mt-2">

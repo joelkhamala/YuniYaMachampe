@@ -122,6 +122,39 @@
                         class="form-control"
                     />
                 </div>
+                <div class="form-group col-lg-6">
+                    <label for="phone" class="font-weight-bold">phone</label>
+                    <input
+                        type="text"
+                        name="phone"
+                        v-model="user.phone"
+                        id="phone"
+                        placeholder="Enter Phone"
+                        class="form-control"
+                    />
+                </div>
+                <div class="form-group col-lg-6">
+                    <label for="date_of_birth" class="font-weight-bold">date_of_birth</label>
+                    <input
+                        type="text"
+                        name="date_of_birth"
+                        v-model="user.date_of_birth"
+                        id="date_of_birth"
+                        placeholder="Enter Date Of Birth"
+                        class="form-control"
+                    />
+                </div>
+                <div class="form-group col-lg-6">
+                    <label for="address" class="font-weight-bold">address</label>
+                    <input
+                        type="text"
+                        name="address"
+                        v-model="user.address"
+                        id="address"
+                        placeholder="Enter Address"
+                        class="form-control"
+                    />
+                </div>
 
                 <div class="form-group col-lg-6">
                     <label for="password" class="font-weight-bold"
@@ -161,7 +194,7 @@
                         :disabled="processing"
                         class="btn-block btn-lg waves-effect waves-light log-in-btn pt-3 pb-3"
                     >
-                        {{ processing ? "Please wait" : "Register" }}
+                        {{ processing ? "Loading...Please wait" : "Register" }}
                     </button>
                 </div>
                 <div class="col-6 text-center d-flex align-items-center mt-2">
@@ -191,6 +224,9 @@ export default {
                 username: "",
                 role: "student",
                 email: "",
+                phone: "",
+                date_of_birth: "",
+                address: "",
                 password: "",
                 password_confirmation: "",
             },

@@ -14,7 +14,7 @@
                                         <tr>
                                             <td>Student Name</td>
                                             <td>:</td>
-                                            <td>Sam Anderson</td>
+                                            <td>{{user.firstname}} {{user.lastname}}</td>
                                         </tr>
                                         <tr>
                                             <td>Student Id</td>
@@ -22,9 +22,9 @@
                                             <td>ST17241</td>
                                         </tr>
                                         <tr>
-                                            <td>Eamil</td>
+                                            <td>Email</td>
                                             <td>:</td>
-                                            <td>sam_anderson@gmail.com</td>
+                                            <td>{{user.email}}</td>
                                         </tr>
                                         <tr>
                                             <td>Phone</td>
@@ -60,7 +60,12 @@
 </template>
 <script>
 export default{
-name: "profile"
+name: "profile",
+data(){
+    return{
+        user: this.$store.state.auth.user
+    }
+},
 }
 </script>
 <style>
