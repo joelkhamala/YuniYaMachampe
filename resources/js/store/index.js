@@ -1,6 +1,7 @@
 import { createStore } from 'vuex'
 import createPersistedState from 'vuex-persistedstate'
 import auth from '@/store/auth'
+import admin from '@/store/admin'
 
 const store = createStore({
     plugins:[
@@ -8,6 +9,7 @@ const store = createStore({
     ],
     modules:{
         auth,
+        admin
     }
 })
 

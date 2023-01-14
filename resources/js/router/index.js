@@ -1,5 +1,5 @@
-import { createWebHistory, createRouter } from "vue-router";
-import store from "@/store";
+import { createWebHistory, createRouter } from 'vue-router'
+import store from '@/store'
 
 /* Layouts */
 const DefaultNav = () => import("@/components/layouts/Default.vue");
@@ -8,6 +8,7 @@ const DefaultNav = () => import("@/components/layouts/Default.vue");
 /* Authentication Layouts */
 const Login = () => import("@/components/authLayouts/Login.vue");
 const Register = () => import("@/components/authLayouts/Register.vue");
+const AdminLogin = () => import("@/components/admin/auth/AdminLogin.vue");
 /* Authentication Layouts */
 
 /* Dashboard Layout*/
@@ -15,6 +16,10 @@ const StudentDashboardLayout = () =>
     import("@/components/layouts/StudentDashboardLayout.vue");
 const StudentDashboard = () =>
     import("@/components/Dashboard/StudentDashboard.vue");
+const AdminLayout = () =>
+    import("@/components/admin/layouts/AdminLayout.vue");
+const AdminDashboard = () =>
+    import("@/components/admin/AdminDashboard.vue");
 /* Dashboard Layout*/
 
 /* Guest Component */
@@ -60,6 +65,7 @@ const routes = [
                 component: Login,
                 meta: {
                     title: `Login`,
+                    middleware: "login",
                 },
             },
             {
@@ -68,6 +74,7 @@ const routes = [
                 component: Register,
                 meta: {
                     title: `Register`,
+                    middleware: "login",
                 },
             },
             {
@@ -186,6 +193,32 @@ const routes = [
             },
         ],
     },
+    {
+        name: "admin-login",
+        path: "/admin-login",
+        component: AdminLogin,
+        meta: {
+            middleware: "login",
+            title: `AdminLogin`,
+        }
+    },
+    {
+        path: "/admin-layout",
+        component: AdminLayout,
+        meta: {
+            middleware: "admin",
+        },
+        children: [
+            {
+                name: "admin-dashboard",
+                path: "/admin-dashboard",
+                component: AdminDashboard,
+                meta: {
+                    title: `AdminDashboard`,
+                },
+            },
+        ]
+    }
 ];
 
 const router = createRouter({
@@ -197,16 +230,32 @@ router.beforeEach((to, from, next) => {
     document.title = to.meta.title;
     if (to.meta.middleware == "guest") {
         if (store.state.auth.authenticated) {
-            next({ name: "studentdashboard" });
+            next();
+        } else if (store.state.admin.authenticated && store.state.admin.isAdmin) {
+            next();
         }
         next();
-    } else {
-        if (store.state.auth.authenticated) {
-            next();
+    } else if (to.meta.middleware == "login") {
+        if (store.state.admin.authenticated && store.state.admin.isAdmin) {
+            next({ name: "admin-dashboard" })
+        } else if (store.state.auth.authenticated) {
+            next({ name: "studentdashboard" })
         } else {
+            next();
+        }
+        
+    } else {
+        if (to.path == "/studentdashboard" && store.state.auth.authenticated) {
+            next();
+        } else if (to.path == "/studentdashboard" && !store.state.auth.authenticated){
             next({ name: "login" });
+        } else if (to.path == "/admin-dashboard" && !store.state.admin.authenticated && !store.state.admin.isAdmin){
+            next({ name: "admin-login" });
+        } else if (to.path == "/admin-dashboard" && store.state.admin.authenticated && store.state.admin.isAdmin) {
+            next();
         }
     }
 });
 
-export default router;
+
+export default router
