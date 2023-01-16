@@ -207,6 +207,7 @@
                         type="submit"
                         :disabled="processing"
                         class="btn-block btn-lg waves-effect waves-light log-in-btn pt-3 pb-3"
+                        style="border: 0;"
                     >
                         {{ processing ? "Loading, Please wait..." : "Register" }}
                     </button>

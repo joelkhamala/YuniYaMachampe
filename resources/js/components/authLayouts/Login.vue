@@ -88,6 +88,7 @@
 
 <script>
 import { mapActions } from 'vuex'
+
 export default {
     name:"login",
     data(){
@@ -128,6 +129,7 @@ export default {
 a {
     text-decoration: none;
 }
+
 .log-in-btn
 {
 border: none;

@@ -6,6 +6,7 @@ export default {
     state:{
         authenticated:false,
         user:{},
+        isAdmin:false
     },
     getters:{
         authenticated(state){
@@ -14,6 +15,13 @@ export default {
         user(state){
             return state.user
         },
+        isAdmin(state){
+            if (state.user.role_id == 1 || state.user.role_id == 2) {
+                return state.isAdmin == true
+            }else {
+                return state.isAdmin == false
+            }
+        }
     },
     mutations:{
         SET_AUTHENTICATED (state, value) {
@@ -22,21 +30,34 @@ export default {
         SET_USER (state, value) {
             state.user = value
         },
+        SET_ADMIN (state) {
+            if (state.user.role_id == 1 || state.user.role_id == 2) {
+                state.isAdmin = true
+            } else {
+                state.isAdmin = false
+            }
+        },
+        SETOUT_ADMIN (state, value) {
+            state.isAdmin = value
+        }
     },
     actions:{
         login({commit}){
             return axios.get('/api/user').then(({data})=>{
                 commit('SET_USER',data)
                 commit('SET_AUTHENTICATED',true)
-                router.push({name:'studentdashboard'})
+                commit('SET_ADMIN')
+                router.push({name:'admin-dashboard'})
             }).catch(({response:{data}})=>{
                 commit('SET_USER',{})
                 commit('SET_AUTHENTICATED',false)
+                commit('SETOUT_ADMIN', false)
             })
         },
         logout({commit}){
             commit('SET_USER',{})
             commit('SET_AUTHENTICATED',false)
+            commit('SETOUT_ADMIN', false)
         }
     }
 }
